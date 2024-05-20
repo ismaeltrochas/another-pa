@@ -2,14 +2,17 @@ package com.proyectoaulas.demo.service;
 
 import com.proyectoaulas.demo.entity.Alerta;
 import com.proyectoaulas.demo.repository.AlertaRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class AlertaService {
-    @Autowired
-    private AlertaRepository repository;
+    private final AlertaRepository repository;
 
     public List<Alerta> findAll() {
         return repository.findAll();
